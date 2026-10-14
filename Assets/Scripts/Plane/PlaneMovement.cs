@@ -48,8 +48,10 @@ public class PlaneMovement : MonoBehaviour
 
     private const string TagWater = "Water";
     private const string TagRunway = "Runway";
+    private const string TagSwitchZone = "SwitchZone";
 
     private bool isDead = false;
+    private bool outOfFuel = false;
     private float currentSpeed;
     private bool isOnRunway = false;
 
@@ -117,9 +119,7 @@ public class PlaneMovement : MonoBehaviour
 
     private void OutOfFuel()
     {
-        isDead = true;
-        Debug.Log("Hết nhiên liệu! Game Over.");
-        Time.timeScale = 0f; // dừng hẳn trò chơi
+        outOfFuel = true;
     }
 
     // Bắn raycast xuống dưới mỗi frame để xác định có đang ở trên đường băng không
@@ -152,24 +152,31 @@ public class PlaneMovement : MonoBehaviour
     //tăng tốc
     private void HandleThrottle()
     {
-        bool isThrottling = Input.GetKey(KeyCode.Space);
         float targetSpeed;
-
-        if (isThrottling)
+        if (outOfFuel)
         {
-            targetSpeed = maxSpeed;
+            transform.Translate(Vector3.down * 10f * Time.deltaTime, Space.World);
         }
         else
         {
-            targetSpeed = minSpeed;
-        }
+            bool isThrottling = Input.GetKey(KeyCode.Space);
 
-        if (!isThrottling && !isOnRunway)
-        {
-            transform.Translate(Vector3.down * fallSpeed * Time.deltaTime, Space.World);
-        }
+            if (isThrottling)
+            {
+                targetSpeed = maxSpeed;
+            }
+            else
+            {
+                targetSpeed = minSpeed;
+            }
 
-        currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
+            if (!isThrottling && !isOnRunway)
+            {
+                transform.Translate(Vector3.down * fallSpeed * Time.deltaTime, Space.World);
+            }
+
+            currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
+        }
     }
 
     //điều khiển 
@@ -180,14 +187,16 @@ public class PlaneMovement : MonoBehaviour
             PerformLoop();
             return;
         }
-
-        if (Input.GetKey(KeyCode.D))
+        if (!outOfFuel)
         {
-            transform.Rotate(Vector3.forward * pitchSpeed * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(Vector3.forward * -pitchSpeed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Rotate(Vector3.forward * pitchSpeed * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                transform.Rotate(Vector3.forward * -pitchSpeed * Time.deltaTime);
+            }
         }
 
         float z = GetSignedZAngle();
@@ -326,6 +335,10 @@ public class PlaneMovement : MonoBehaviour
             Debug.Log("Safe! Water");
             return;
         }
+        if (IsMatchTag(other.gameObject, TagSwitchZone))
+        {
+            return;
+        }
 
         Crash();
     }
@@ -404,6 +417,7 @@ public class PlaneMovement : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+        GameManager.Instance.FailMission();
         Debug.Log("Game Over!");
     }
 }

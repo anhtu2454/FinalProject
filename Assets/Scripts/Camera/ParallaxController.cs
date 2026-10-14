@@ -4,7 +4,7 @@ public class ParallaxController : MonoBehaviour
 {
     Transform cam;
     Vector3 camStartPos;
-    Vector3 startPos;      // vị trí ban đầu của Background (bạn đã canh sát địa hình)
+    Vector3 startPos;
     float distance;
 
     GameObject[] backgrounds;

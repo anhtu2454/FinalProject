@@ -1,17 +1,6 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Gắn script này vào chính GameObject trực thăng (hoặc 1 object quản lý riêng).
-/// Cần chuẩn bị trong scene:
-///  - AnchorPoint: Empty GameObject làm CON của trực thăng (đáy thân máy bay),
-///    có Rigidbody (Is Kinematic = true).
-///  - HookObject: GameObject KHÔNG làm con của trực thăng, có Rigidbody (không kinematic)
-///    + Collider (để va chạm núi/địa hình thật) + SpringJoint
-///    (Connected Body = Rigidbody của AnchorPoint, Max Distance = ropeLength).
-///  - Việc vẽ dây (đẹp, có độ võng) nên dùng asset "Optimized Ropes And Cables Tool":
-///    gán Rope Start = AnchorPoint, Rope End = HookObject trong component Rope của asset đó.
-///    ropeRenderer / ropeTube dưới đây chỉ là phương án dự phòng nếu không dùng asset.
-/// </summary>
+
 public class HelicopterCargoHook : MonoBehaviour
 {
     [Header("--- Tham chiếu ---")]

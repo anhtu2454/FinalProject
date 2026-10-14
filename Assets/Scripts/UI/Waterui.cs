@@ -8,8 +8,6 @@ public class WaterUI : MonoBehaviour
 
     private void Update()
     {
-        if (plane == null || waterText == null) return;
-
         waterText.text = $"{plane.CurrentWaterCount}/{plane.MaxWaterCapacity}";
     }
 }

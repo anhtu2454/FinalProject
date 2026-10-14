@@ -10,6 +10,9 @@ TagManager:
   - Fire
   - RopeSegment
   - Cargo
+  - Vehicle
+  - SwitchZone
+  - Victim
   layers:
   - Default
   - TransparentFX

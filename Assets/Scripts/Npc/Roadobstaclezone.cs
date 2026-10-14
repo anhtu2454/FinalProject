@@ -4,21 +4,17 @@ using UnityEngine.Events;
 
 public class RoadObstacleZone : MonoBehaviour
 {
-    [Tooltip("Tag của các vật được tính là chướng ngại vật")]
+    [Tooltip("Tag cargo")]
     public string cargoTag = "Cargo";
 
-    [Tooltip("Sự kiện được gọi khi KHÔNG còn vật Cargo nào chạm vùng đường này. " +
-             "Kéo xe/tàu vào đây, chọn hàm VehicleAutoMover.StartMoving.")]
     public UnityEvent OnRoadClear;
 
-    [Tooltip("Sự kiện được gọi khi có vật Cargo chạm trở lại sau khi đã thông. " +
-             "Kéo xe/tàu vào đây, chọn hàm VehicleAutoMover.StopMoving.")]
     public UnityEvent OnRoadBlocked;
 
     // Danh sách các collider Cargo hiện đang chạm vùng trigger này
     private HashSet<Collider> obstaclesInZone = new HashSet<Collider>();
 
-    // true = đường đang thông (đã bắn OnRoadClear và chưa bắn lại OnRoadBlocked)
+    // true = đường đang thông
     private bool isClear = true;
 
     void OnTriggerEnter(Collider other)
@@ -50,7 +46,7 @@ public class RoadObstacleZone : MonoBehaviour
         if (!isClear && obstaclesInZone.Count == 0)
         {
             isClear = true;
-            Debug.Log($"[RoadObstacleZone:{name}] Đường đã thông! Gọi OnRoadClear.");
+            Debug.Log($"[RoadObstacleZone:{name}] Đường đã thông");
             OnRoadClear?.Invoke();
         }
     }
@@ -60,7 +56,7 @@ public class RoadObstacleZone : MonoBehaviour
         if (isClear && obstaclesInZone.Count > 0)
         {
             isClear = false;
-            Debug.Log($"[RoadObstacleZone:{name}] Đường bị chặn! Gọi OnRoadBlocked.");
+            Debug.Log($"[RoadObstacleZone:{name}] Đường bị chặn");
             OnRoadBlocked?.Invoke();
         }
     }

@@ -2,20 +2,17 @@
 
 public class HookCargoController : MonoBehaviour
 {
-    [Header("--- Cấu hình dây cẩu ---")]
-    [Tooltip("Điểm gắn dây trên thân trực thăng. Kéo vào slot Rope Start / Start Point của asset dây.")]
+    [Header("Cấu hình dây cẩu")]
     public Transform ropeAnchor;
-
-    [Tooltip("Vật móc ở đầu dây, cần có Rigidbody (không kinematic). Kéo vào slot Rope End / End Point của asset dây.")]
     public Transform hookPoint;
 
     public float minRopeLength = 0f;
     public float maxRopeLength = 6f;
 
-    [Tooltip("Tốc độ thả/thu dây (đơn vị/giây)")]
+    [Tooltip("Tốc độ thả/thu dây")]
     public float ropeChangeSpeed = 3f;
 
-    [Header("--- Phím điều khiển ---")]
+    [Header("Phím điều khiển")]
     public KeyCode extendKey = KeyCode.F;
     public KeyCode retractKey = KeyCode.R;
 

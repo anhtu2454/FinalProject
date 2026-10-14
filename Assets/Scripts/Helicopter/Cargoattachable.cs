@@ -3,10 +3,11 @@
 [RequireComponent(typeof(Rigidbody))]
 public class CargoAttachable : MonoBehaviour
 {
-    [Header("--- Cấu hình gắn hàng cẩu ---")]
+    [Header("Tag cargo")]
     public string cargoTag = "Cargo";
+    public string victimTag = "Victim";
 
-    [Tooltip("Phím chủ động móc hàng khi đang chạm vào Cargo")]
+    [Tooltip("Phím móc hàng khi đang chạm vào Cargo")]
     public KeyCode attachKey = KeyCode.E;
 
     [Tooltip("Phím thả hàng đang cẩu xuống")]
@@ -31,15 +32,15 @@ public class CargoAttachable : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (currentCargo != null) return; 
-        if (!collision.gameObject.CompareTag(cargoTag)) return;
+        if (currentCargo != null) return;
+        if (!(collision.gameObject.CompareTag(cargoTag) || collision.gameObject.CompareTag(victimTag))) return;
 
         nearbyCargo = collision.rigidbody != null ? collision.rigidbody : collision.gameObject.GetComponent<Rigidbody>();
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (!collision.gameObject.CompareTag(cargoTag)) return;
+        if (!(collision.gameObject.CompareTag(cargoTag) || collision.gameObject.CompareTag(victimTag))) return;
 
         Rigidbody exitingRb = collision.rigidbody != null ? collision.rigidbody : collision.gameObject.GetComponent<Rigidbody>();
         if (exitingRb == nearbyCargo)
@@ -59,10 +60,19 @@ public class CargoAttachable : MonoBehaviour
         currentJoint.connectedBody = cargoRb;
         currentJoint.breakForce = Mathf.Infinity;
         currentJoint.breakTorque = Mathf.Infinity;
+
+        VictimAnimation victim = cargoRb.GetComponent<VictimAnimation>();
+        if (victim != null) victim.OnHooked();
     }
 
     void ReleaseCargo()
     {
+        if (currentCargo != null)
+        {
+            VictimAnimation victim = currentCargo.GetComponent<VictimAnimation>();
+            if (victim != null) victim.OnReleased();
+        }
+
         if (currentJoint != null)
         {
             Destroy(currentJoint);
