@@ -65,7 +65,7 @@ public class CargoAttachable : MonoBehaviour
         if (victim != null) victim.OnHooked();
     }
 
-    void ReleaseCargo()
+    public void ReleaseCargo()
     {
         if (currentCargo != null)
         {

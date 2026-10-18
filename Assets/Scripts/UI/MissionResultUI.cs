@@ -8,6 +8,9 @@ public class MissionResultUI : MonoBehaviour
     [SerializeField] private GameObject fireCheckIcon;
     [SerializeField] private GameObject fireFailIcon;
 
+    [SerializeField] private GameObject victimCheckIcon;
+    [SerializeField] private GameObject victimFailIcon;
+
     [SerializeField] private GameObject vehicleCheckIcon;
     [SerializeField] private GameObject vehicleFailIcon;
 
@@ -22,17 +25,17 @@ public class MissionResultUI : MonoBehaviour
         }
     }
 
-    void setIcon(GameObject fireCheckIcon, GameObject fireFailIcon, bool fireDone)
+    void setIcon(GameObject CheckIcon, GameObject FailIcon, bool Done)
     {
-        if (fireDone == true)
+        if (Done == true)
         {
-            fireCheckIcon.SetActive(true);
-            fireFailIcon.SetActive(false);
+            CheckIcon.SetActive(true);
+            FailIcon.SetActive(false);
         }
         else
         {
-            fireCheckIcon.SetActive(false);
-            fireFailIcon.SetActive(true);
+            CheckIcon.SetActive(false);
+            FailIcon.SetActive(true);
         }
     }
 
@@ -55,6 +58,7 @@ public class MissionResultUI : MonoBehaviour
     private void CheckStatus()
     {
         bool firedone;
+        bool victimdone;
         bool vehicledone;
         if (GameManager.Instance.RemainingFires <= 0)
         {
@@ -65,6 +69,17 @@ public class MissionResultUI : MonoBehaviour
             firedone = false;
         }
         setIcon(fireCheckIcon, fireFailIcon, firedone);
+
+        if (GameManager.Instance.RemainingVictims <= 0)
+        {
+            victimdone = true;
+        }
+        else
+        {
+            victimdone = false;
+        }
+        setIcon(victimCheckIcon, victimFailIcon, victimdone);
+
         if (GameManager.Instance.RemainingVehicles <= 0)
         {
             vehicledone = true;

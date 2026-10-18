@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     [Header("kiểm tra xe")]
     public string vehicleTag = "Vehicle";
 
+    [Header("kiểm tra người bị nạn")]
+    public string victimTag = "Victim";
+
     [Header("Sự kiện khi hoàn thành màn")]
     public UnityEvent LevelComplete;
     [Header("Sự kiện khi thất bại")]
@@ -22,6 +25,8 @@ public class GameManager : MonoBehaviour
     private int totalVehicles;
     private int totalFires;
     private int remainingFires;
+    private int totalVictims;
+    private int remainingVictims;
     private readonly HashSet<Transform> arrivedVehicles = new HashSet<Transform>();
     private bool levelCompleted = false;
     private float fireCheckTimer;
@@ -29,6 +34,8 @@ public class GameManager : MonoBehaviour
     // Số liệu để UI đọc
     public int TotalFires => totalFires;
     public int RemainingFires => remainingFires;
+    public int TotalVictims => totalVictims;
+    public int RemainingVictims => remainingVictims;
     public int TotalVehicles => totalVehicles;
     public int ArrivedVehicles => arrivedVehicles.Count;
     public int RemainingVehicles => Mathf.Max(totalVehicles - arrivedVehicles.Count, 0);
@@ -48,6 +55,8 @@ public class GameManager : MonoBehaviour
         totalVehicles = GameObject.FindGameObjectsWithTag(vehicleTag).Length;
         totalFires = GameObject.FindGameObjectsWithTag(fireTag).Length;
         remainingFires = totalFires;
+        totalVictims = GameObject.FindGameObjectsWithTag(victimTag).Length;
+        remainingVictims = totalVictims;
 
         if (totalVehicles == 0)
         {
@@ -56,6 +65,10 @@ public class GameManager : MonoBehaviour
         if (totalFires == 0)
         {
             Debug.LogWarning($"GameManager: Không tìm thấy đám lửa nào với tag '{fireTag}'. Kiểm tra lại tag đã gán trên các đám lửa chưa.");
+        }
+        if (totalVictims == 0)
+        {
+            Debug.LogWarning($"GameManager: Không tìm thấy người bị nạn nào với tag '{victimTag}'. Kiểm tra lại tag đã gán trên các victim chưa.");
         }
     }
 
@@ -88,6 +101,11 @@ public class GameManager : MonoBehaviour
         remainingFires = GameObject.FindGameObjectsWithTag(fireTag).Length;
         return remainingFires == 0;
     }
+    bool VictimsCleared()
+    {
+        remainingVictims = GameObject.FindGameObjectsWithTag(victimTag).Length;
+        return remainingVictims == 0;
+    }
 
     bool AllVehiclesDelivered()
     {
@@ -104,7 +122,12 @@ public class GameManager : MonoBehaviour
     void CheckWinCondition()
     {
         if (levelCompleted) return;
-        if (!FireCleared()) return;
+
+        bool fireCleared = FireCleared();
+        bool victimsCleared = VictimsCleared();
+
+        if (!fireCleared) return;
+        if (!victimsCleared) return;
         if (!AllVehiclesDelivered()) return;
 
         CompleteLevel();
