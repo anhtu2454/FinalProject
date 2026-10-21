@@ -6,6 +6,7 @@ public class CargoAttachable : MonoBehaviour
     [Header("Tag cargo")]
     public string cargoTag = "Cargo";
     public string victimTag = "Victim";
+    public string brokenVehicleTag = "VehicleBroken";
 
     [Tooltip("Phím móc hàng khi đang chạm vào Cargo")]
     public KeyCode attachKey = KeyCode.E;
@@ -33,14 +34,14 @@ public class CargoAttachable : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (currentCargo != null) return;
-        if (!(collision.gameObject.CompareTag(cargoTag) || collision.gameObject.CompareTag(victimTag))) return;
+        if (!(collision.gameObject.CompareTag(cargoTag) || collision.gameObject.CompareTag(victimTag) || collision.gameObject.CompareTag(brokenVehicleTag))) return;
 
         nearbyCargo = collision.rigidbody != null ? collision.rigidbody : collision.gameObject.GetComponent<Rigidbody>();
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (!(collision.gameObject.CompareTag(cargoTag) || collision.gameObject.CompareTag(victimTag))) return;
+        if (!(collision.gameObject.CompareTag(cargoTag) || collision.gameObject.CompareTag(victimTag) || collision.gameObject.CompareTag(brokenVehicleTag))) return;
 
         Rigidbody exitingRb = collision.rigidbody != null ? collision.rigidbody : collision.gameObject.GetComponent<Rigidbody>();
         if (exitingRb == nearbyCargo)

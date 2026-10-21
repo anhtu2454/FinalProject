@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     [Header("kiểm tra xe")]
     public string vehicleTag = "Vehicle";
+    public string brokenVehicleTag = "VehicleBroken";
 
     [Header("kiểm tra người bị nạn")]
     public string victimTag = "Victim";
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        totalVehicles = GameObject.FindGameObjectsWithTag(vehicleTag).Length;
+        totalVehicles = GameObject.FindGameObjectsWithTag(vehicleTag).Length + GameObject.FindGameObjectsWithTag(brokenVehicleTag).Length;
         totalFires = GameObject.FindGameObjectsWithTag(fireTag).Length;
         remainingFires = totalFires;
         totalVictims = GameObject.FindGameObjectsWithTag(victimTag).Length;
@@ -94,6 +95,11 @@ public class GameManager : MonoBehaviour
             Debug.Log($"GameManager: Xe '{vehicle.name}' đã tới đích ({arrivedVehicles.Count}/{totalVehicles}).");
             CheckWinCondition();
         }
+    }
+    public void UnregisterVehicle(Transform vehicle)
+    {
+        if (levelCompleted || vehicle == null) return;
+        arrivedVehicles.Remove(vehicle);
     }
 
     bool FireCleared()
