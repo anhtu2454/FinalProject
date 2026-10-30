@@ -103,7 +103,7 @@ public class PlaneMovement : MonoBehaviour
         transform.Translate(Vector3.left * currentSpeed * Time.deltaTime);
     }
 
-    // Đếm ngược thời gian chơi. Hết nhiên liệu -> dừng trò chơi, không cần nạp lại.
+    // Đếm ngược thời gian chơi
     private void HandleFuel()
     {
         if (currentFuel <= 0f) return;

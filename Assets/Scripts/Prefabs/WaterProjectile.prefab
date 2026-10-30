@@ -34118,7 +34118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterProjectile
   lifeTime: 5
-  explosionEffectPrefab: {fileID: 0}
+  explosionEffectPrefab: {fileID: 8205706795460263314, guid: 326e86d5729c54e479798cacab220bb2, type: 3}
 --- !u!65 &2485177124977698022
 BoxCollider:
   m_ObjectHideFlags: 0

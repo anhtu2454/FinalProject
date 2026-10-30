@@ -11,10 +11,8 @@ public class RoadObstacleZone : MonoBehaviour
 
     public UnityEvent OnRoadBlocked;
 
-    // Danh sách các collider Cargo hiện đang chạm vùng trigger này
     private HashSet<Collider> obstaclesInZone = new HashSet<Collider>();
 
-    // true = đường đang thông
     private bool isClear = true;
 
     void OnTriggerEnter(Collider other)
