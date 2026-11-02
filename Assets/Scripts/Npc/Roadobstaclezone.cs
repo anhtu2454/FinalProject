@@ -4,37 +4,51 @@ using UnityEngine.Events;
 
 public class RoadObstacleZone : MonoBehaviour
 {
-    [Tooltip("Tag cargo")]
-    public string cargoTag = "Cargo";
+    [Tooltip("Các tag vật cản trên đường")]
+    public List<string> obstacleTags = new List<string>
+    {
+        "Cargo",
+        "Victim",
+        "Fire",
+        "Vehicle",
+        "VehicleBroken",
+        "Helicopter",
+        "Water"
+    };
 
     public UnityEvent OnRoadClear;
-
     public UnityEvent OnRoadBlocked;
 
     private HashSet<Collider> obstaclesInZone = new HashSet<Collider>();
-
     private bool isClear = true;
+
+    private bool IsObstacle(Collider other)
+    {
+        for (int i = 0; i < obstacleTags.Count; i++)
+        {
+            if (other.CompareTag(obstacleTags[i])) return true;
+        }
+        return false;
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(cargoTag)) return;
+        if (!IsObstacle(other)) return;
 
-        bool added = obstaclesInZone.Add(other);
-        if (added)
+        if (obstaclesInZone.Add(other))
         {
-            Debug.Log($"[RoadObstacleZone:{name}] {other.name} đang chặn đường. Tổng: {obstaclesInZone.Count}");
+            Debug.Log($"[RoadObstacleZone:{name}] {other.name} ({other.tag}) đang chặn đường. Tổng: {obstaclesInZone.Count}");
             CheckBlocked();
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag(cargoTag)) return;
+        if (!IsObstacle(other)) return;
 
-        bool removed = obstaclesInZone.Remove(other);
-        if (removed)
+        if (obstaclesInZone.Remove(other))
         {
-            Debug.Log($"[RoadObstacleZone:{name}] {other.name} đã rời khỏi đường. Còn lại: {obstaclesInZone.Count}");
+            Debug.Log($"[RoadObstacleZone:{name}] {other.name} ({other.tag}) đã rời khỏi đường. Còn lại: {obstaclesInZone.Count}");
             CheckClear();
         }
     }

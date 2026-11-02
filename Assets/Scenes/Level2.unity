@@ -144416,6 +144416,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8634637594312527959, guid: 83208228e90324a269a6120c1cadc77a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2124513826}
+    - targetCorrespondingSourceObject: {fileID: 8634637594312527959, guid: 83208228e90324a269a6120c1cadc77a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2124513829}
   m_SourcePrefab: {fileID: 100100000, guid: 83208228e90324a269a6120c1cadc77a, type: 3}
 --- !u!1001 &1781827081
 PrefabInstance:
@@ -187085,6 +187088,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2124513829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124513825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be32cc5a6c624b04e807aedb3d6fc130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VictimRescue
+  helicopterTag: Helicopter
+  hook: {fileID: 284526740}
 --- !u!4 &2125110396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b6b5a01cc54c3a14ca4e7b6197c7cf99, type: 3}

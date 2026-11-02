@@ -85,7 +85,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Gọi từ DestinationZone.cs khi có 1 xe chạm vào vùng đích
     public void RegisterVehicleArrived(Transform vehicle)
     {
         if (levelCompleted || vehicle == null) return;
