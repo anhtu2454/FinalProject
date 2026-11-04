@@ -22,6 +22,20 @@ public class RoadObstacleZone : MonoBehaviour
     private HashSet<Collider> obstaclesInZone = new HashSet<Collider>();
     private bool isClear = true;
 
+    void Update()
+    {
+        if (obstaclesInZone.Count == 0) return;
+
+        int removed = obstaclesInZone.RemoveWhere(c =>
+            c == null || !c.enabled || !c.gameObject.activeInHierarchy);
+
+        if (removed > 0)
+        {
+            Debug.Log($"[RoadObstacleZone:{name}] Còn lại: {obstaclesInZone.Count}");
+            CheckClear();
+        }
+    }
+
     private bool IsObstacle(Collider other)
     {
         for (int i = 0; i < obstacleTags.Count; i++)

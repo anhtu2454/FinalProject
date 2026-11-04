@@ -6,6 +6,7 @@ public class WaterProjectile : MonoBehaviour
     [SerializeField] private float lifeTime = 5f;
     [SerializeField] private GameObject explosionEffectPrefab;
     private const string TagFire = "Fire";
+    private const string TagSwitchZone = "SwitchZone";
 
     private Rigidbody rb;
 
@@ -38,6 +39,7 @@ public class WaterProjectile : MonoBehaviour
 
     private void HandleImpact(GameObject obj)
     {
+        if (obj.CompareTag(TagSwitchZone)) return;
 
         Debug.Log($"[WaterProjectile] Va chạm với: {obj.name} (Tag: {obj.tag})");
 

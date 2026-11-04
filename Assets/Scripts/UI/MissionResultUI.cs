@@ -15,7 +15,7 @@ public class MissionResultUI : MonoBehaviour
     [SerializeField] private GameObject vehicleFailIcon;
 
     [SerializeField] private GameObject nextLevelButton;
-    [SerializeField] private string nextLevelSceneName = "Level2";
+    [SerializeField] private string nextLevelSceneName = "Level";
 
     void Start()
     {
