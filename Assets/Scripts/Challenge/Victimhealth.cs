@@ -39,7 +39,7 @@ public class VictimHealth : MonoBehaviour
 
     void CreateHealthBar()
     {
-        // object gốc của thanh máu, không làm con của victim để không bị xoay/scale theo victim
+        // object gốc của thanh máu
         barRoot = new GameObject("HealthBar");
         Canvas canvas = barRoot.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.WorldSpace;
@@ -107,7 +107,7 @@ public class VictimHealth : MonoBehaviour
         UpdateBar();
     }
 
-    // đặt vị trí và hướng thanh máu sau khi victim đã di chuyển xong trong frame
+    // đặt vị trí và hướng thanh máu sau khi victim di chuyển
     void LateUpdate()
     {
         if (barRoot == null || !barRoot.activeSelf) return;
@@ -120,7 +120,7 @@ public class VictimHealth : MonoBehaviour
         }
     }
 
-    // victim được cứu (bị Destroy) thì xóa luôn thanh máu
+    // victim được cứu xóa thanh máu
     void OnDestroy()
     {
         if (barRoot != null)

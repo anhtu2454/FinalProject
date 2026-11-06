@@ -23,6 +23,13 @@ public class HelicopterMovement : MonoBehaviour
     // biến lưu góc quay mặt hiện tại (0 độ hoặc 180 độ)
     private float currentFacingY = 0f;
 
+    private Rigidbody rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
         HandleLift();
@@ -43,9 +50,13 @@ public class HelicopterMovement : MonoBehaviour
         {
             targetLift = -maxLiftSpeed;
         }
-        
+
         currentLiftSpeed = Mathf.MoveTowards(currentLiftSpeed, targetLift, acceleration * Time.deltaTime);
-        transform.Translate(Vector3.up * currentLiftSpeed * Time.deltaTime, Space.World);
+
+        Vector3 v = rb.linearVelocity;
+        v.y = currentLiftSpeed;
+        v.z = 0f;
+        rb.linearVelocity = v;
     }
 
     //tiến / lùi
@@ -63,7 +74,11 @@ public class HelicopterMovement : MonoBehaviour
         }
 
         currentMoveSpeed = Mathf.MoveTowards(currentMoveSpeed, targetMove, acceleration * Time.deltaTime);
-        transform.Translate(Vector3.right * currentMoveSpeed * Time.deltaTime, Space.World);
+
+        Vector3 v = rb.linearVelocity;
+        v.x = currentMoveSpeed;
+        v.z = 0f;
+        rb.linearVelocity = v;
     }
 
 

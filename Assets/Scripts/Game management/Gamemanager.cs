@@ -141,12 +141,26 @@ public class GameManager : MonoBehaviour
     void CompleteLevel()
     {
         levelCompleted = true;
-        Debug.Log("GameManager: Đã dập hết lửa và cứu hết xe / Mở khóa màn 2");
+        Debug.Log("GameManager: Hoàn thành màn, mở khóa màn kế tiếp");
 
-        // Lưu trạng thái mở khóa màn 2, dùng cho menu chọn màn (level select)
-        PlayerPrefs.SetInt("Level2Unlocked", 1);
-        PlayerPrefs.Save();
+        LevelProgress.UnlockNextLevel();
 
         LevelComplete?.Invoke();
+    }
+
+    // CHỈ DÙNG ĐỂ TEST -- ép hoàn thành màn ngay, bảng kết quả hiện đủ tick XONG THÌ XÓA
+    public void DebugForceComplete()
+    {
+        if (levelCompleted) return;
+
+        remainingFires = 0;
+        remainingVictims = 0;
+
+        foreach (GameObject v in GameObject.FindGameObjectsWithTag(vehicleTag))
+        {
+            arrivedVehicles.Add(v.transform);
+        }
+
+        CompleteLevel();
     }
 }

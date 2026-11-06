@@ -14,6 +14,12 @@ public class BreakableWall : MonoBehaviour
     public float explosionForce = 6f;
     public float explosionRadius = 5f;
 
+    [Header("Sound")]
+    public AudioClip breakClip;
+    [Range(0f, 1f)] public float breakVolume = 1f;
+    public float soundMinDistance = 20f;
+    public float soundMaxDistance = 200f;
+
     private readonly List<Rigidbody> pieces = new List<Rigidbody>();
     private bool broken = false;
 
@@ -56,10 +62,33 @@ public class BreakableWall : MonoBehaviour
     {
         broken = true;
 
+        PlayBreakSound(hitPoint);
+
         foreach (Rigidbody rb in pieces)
         {
             rb.isKinematic = false;
             rb.AddExplosionForce(explosionForce, hitPoint, explosionRadius, 0f, ForceMode.Impulse);
         }
+    }
+
+    //âm thanh
+    void PlayBreakSound(Vector3 position)
+    {
+        if (breakClip == null) return;
+
+        // object tạm chứa AudioSource, tự xóa sau khi phát xong
+        GameObject soundObj = new GameObject("WallBreakSound");
+        soundObj.transform.position = position;
+
+        AudioSource src = soundObj.AddComponent<AudioSource>();
+        src.clip = breakClip;
+        src.volume = breakVolume;
+        src.spatialBlend = 1f;
+        src.rolloffMode = AudioRolloffMode.Linear;
+        src.minDistance = soundMinDistance;
+        src.maxDistance = soundMaxDistance;
+        src.Play();
+
+        Destroy(soundObj, breakClip.length + 0.1f);
     }
 }

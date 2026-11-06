@@ -1470,6 +1470,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d840c85e536f154889ac989ae72eb67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1011684895}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d840c85e536f154889ac989ae72eb67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1011684896}
   m_SourcePrefab: {fileID: 100100000, guid: 2d840c85e536f154889ac989ae72eb67, type: 3}
 --- !u!1001 &29965999
 PrefabInstance:
@@ -8283,6 +8286,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 335490239}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 335490245}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1990467571}
@@ -17942,6 +17948,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 168144746}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 168144749}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 168144748}
@@ -18023,6 +18032,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &168144749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168144743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1001 &168938496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18733,6 +18756,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1547013310}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1547013316}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 870726299}
@@ -23961,6 +23987,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 273686799}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 273686802}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 273686801}
@@ -24042,6 +24071,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &273686802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273686796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!43 &273694846
 Mesh:
   m_ObjectHideFlags: 0
@@ -71396,6 +71439,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8172849020266659022, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
   m_PrefabInstance: {fileID: 74418990}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &335490245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335490238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1001 &341596681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77061,6 +77118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaneEngineSound
   idleClip: {fileID: 8300000, guid: b9569e44d77931d45a474cac8f0128a9, type: 3}
   throttleClip: {fileID: 8300000, guid: 4385e8f923967ba4188ae584a33f1c1e, type: 3}
+  shiftClip: {fileID: 8300000, guid: e28df0d1e3e345d4b860d34ceaec00f9, type: 3}
+  shiftVolume: 1
 --- !u!1001 &356567098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81151,6 +81210,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 448197578}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 448197581}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 448197580}
@@ -81232,6 +81294,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &448197581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448197575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!43 &448305191
 Mesh:
   m_ObjectHideFlags: 0
@@ -105868,6 +105944,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8172849020266659022, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
   m_PrefabInstance: {fileID: 1019526917}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &592401650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592401643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1 &595257957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
@@ -105911,6 +106001,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8172849020266659022, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
   m_PrefabInstance: {fileID: 1788318095}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &595257964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595257957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1001 &596563596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181116,6 +181220,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 733648798}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 733648801}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 733648800}
@@ -181197,6 +181304,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &733648801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733648795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1 &740133851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2081e948c5880f14ea49208686056ed6, type: 3}
@@ -184763,6 +184884,10 @@ MonoBehaviour:
   breakSpeed: 4
   explosionForce: 6
   explosionRadius: 5
+  breakClip: {fileID: 0}
+  breakVolume: 1
+  soundMinDistance: 20
+  soundMaxDistance: 200
 --- !u!4 &822161160
 Transform:
   m_ObjectHideFlags: 0
@@ -186123,6 +186248,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef5273086952ac24f9e6034e78ca918d, type: 3}
+--- !u!1 &851987527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 851987529}
+  - component: {fileID: 851987528}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &851987528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851987527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e203a624eadd4e94eb20984dd23b82ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DebugCheat
+  completeKey: 290
+  failKey: 291
+--- !u!4 &851987529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851987527}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 617.33606, y: -0.00003, z: 4516.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855457264
 GameObject:
   m_ObjectHideFlags: 0
@@ -187840,6 +188011,10 @@ MonoBehaviour:
   breakSpeed: 4
   explosionForce: 6
   explosionRadius: 5
+  breakClip: {fileID: 0}
+  breakVolume: 1
+  soundMinDistance: 20
+  soundMaxDistance: 200
 --- !u!4 &891421871
 Transform:
   m_ObjectHideFlags: 0
@@ -191930,6 +192105,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 983710905}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 983710908}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 983710907}
@@ -192011,6 +192189,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &983710908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983710902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1001 &988850026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199733,6 +199925,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -9185828297851381616, guid: 2d840c85e536f154889ac989ae72eb67, type: 3}
+--- !u!114 &1011684896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011684888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4ff6994212fbc41bdb95d08064f463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HelicopterSound
+  idleClip: {fileID: 8300000, guid: 902b438a424b8db4692a36fab43e8b46, type: 3}
+  moveClip: {fileID: 8300000, guid: 7ebb74c2d5889d94ba8dc544a4295073, type: 3}
+  ropeLoopClip: {fileID: 8300000, guid: 33ad7894d9cf5bb439fe182a11ccc091, type: 3}
+  hookGrabClip: {fileID: 8300000, guid: d6226fc7d8bf1bb4390dee8701ce7845, type: 3}
+  engineVolume: 0.7
+  ropeVolume: 1
+  sfxVolume: 1
+  fadeSpeed: 3
 --- !u!1 &1012487142
 GameObject:
   m_ObjectHideFlags: 0
@@ -200023,6 +200235,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 592401644}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 592401650}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 441719646}
@@ -244752,6 +244967,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1122604148}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1122604151}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1122604150}
@@ -244833,6 +245051,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &1122604151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122604145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1001 &1123356721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328221,6 +328453,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8172849020266659022, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
   m_PrefabInstance: {fileID: 188710656}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1547013316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547013309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1001 &1547112683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329688,6 +329934,10 @@ MonoBehaviour:
   breakSpeed: 4
   explosionForce: 6
   explosionRadius: 5
+  breakClip: {fileID: 8300000, guid: 882a53dc82d189f4a9380d8aa84d9f06, type: 3}
+  breakVolume: 1
+  soundMinDistance: 20
+  soundMaxDistance: 200
 --- !u!4 &1592200787
 Transform:
   m_ObjectHideFlags: 0
@@ -331397,6 +331647,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1626362591}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626362594}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1626362593}
@@ -331478,6 +331731,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &1626362594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626362588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1001 &1630765300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -339750,6 +340017,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1682431097}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1682431100}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1682431099}
@@ -339831,6 +340101,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &1682431100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682431094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1 &1682739479
 GameObject:
   m_ObjectHideFlags: 0
@@ -354021,6 +354305,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 595257958}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 595257964}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 432966575}
@@ -363252,6 +363539,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1908693415}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1908693418}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1908693417}
@@ -363333,6 +363623,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &1908693418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908693412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 0.3
 --- !u!43 &1909023178
 Mesh:
   m_ObjectHideFlags: 0
@@ -386619,6 +386923,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1920098985}
+    - targetCorrespondingSourceObject: {fileID: 8172849020266659018, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1920098988}
     - targetCorrespondingSourceObject: {fileID: 8172849020746995793, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1920098987}
@@ -386700,6 +387007,20 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &1920098988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920098982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c034770ba6ff3498be98603e92a691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSound
+  burnLoopClip: {fileID: 8300000, guid: 1e48abcf4002a594abf96cbd0a4adeeb, type: 3}
+  burnVolume: 1
 --- !u!1 &1923247247
 GameObject:
   m_ObjectHideFlags: 0
@@ -483762,7 +484083,6 @@ SceneRoots:
   - {fileID: 1920098981}
   - {fileID: 733648794}
   - {fileID: 273686795}
-  - {fileID: 37433234}
   - {fileID: 1122604144}
   - {fileID: 1626362587}
   - {fileID: 1682431093}
@@ -483771,8 +484091,9 @@ SceneRoots:
   - {fileID: 188710656}
   - {fileID: 448197574}
   - {fileID: 1788318095}
-  - {fileID: 74418990}
   - {fileID: 1019526917}
+  - {fileID: 74418990}
+  - {fileID: 37433234}
   - {fileID: 2136225271}
   - {fileID: 399862126}
   - {fileID: 920003548}
@@ -484254,3 +484575,4 @@ SceneRoots:
   - {fileID: 804809825}
   - {fileID: 1753704971}
   - {fileID: 481284546}
+  - {fileID: 851987529}
