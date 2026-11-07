@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Rigidbody))]
 public class VehicleAutoMover : MonoBehaviour
 {
     [Header("Điểm đích")]
@@ -8,7 +9,7 @@ public class VehicleAutoMover : MonoBehaviour
 
     [Header("Thông số di chuyển")]
     public float moveSpeed = 5f;
-    public bool rotateTowardsDestination = true;
+    public bool rotateTowardsDestination = false;
     public float rotateSpeed = 5f;
     public float stopDistance = 0.2f;
 
@@ -19,7 +20,14 @@ public class VehicleAutoMover : MonoBehaviour
 
     private bool canMove = false;
     private bool hasArrived = false;
+    private Rigidbody rb;
+    public Vector3 centerOfMassOffset = new Vector3(0, -1f, 0);
 
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.centerOfMass += centerOfMassOffset;
+    }
 
     public void StartMoving()
     {
@@ -30,12 +38,12 @@ public class VehicleAutoMover : MonoBehaviour
         onStartMoving?.Invoke();
     }
 
-
     public void StopMoving()
     {
-        if (!canMove) return; 
+        if (!canMove) return;
 
         canMove = false;
+        StopHorizontal();
         Debug.Log($"[VehicleAutoMover] {name} dừng lại vì đường bị chặn trở lại.");
         onStopped?.Invoke();
     }
@@ -45,7 +53,11 @@ public class VehicleAutoMover : MonoBehaviour
         if (!canMove || hasArrived || destination == null) return;
 
         Vector3 dest = destination.position;
-        transform.position = Vector3.MoveTowards(transform.position, dest, moveSpeed * Time.deltaTime);
+
+        Vector3 moveDir = dest - transform.position;
+        moveDir.y = 0f;
+        moveDir.Normalize();
+        rb.linearVelocity = new Vector3(moveDir.x * moveSpeed, rb.linearVelocity.y, moveDir.z * moveSpeed);
 
         if (rotateTowardsDestination)
         {
@@ -62,8 +74,14 @@ public class VehicleAutoMover : MonoBehaviour
         {
             hasArrived = true;
             canMove = false;
+            StopHorizontal();
             Debug.Log($"[VehicleAutoMover] {name} đã đến điểm đích.");
             onArrived?.Invoke();
         }
+    }
+
+    void StopHorizontal()
+    {
+        rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
     }
 }

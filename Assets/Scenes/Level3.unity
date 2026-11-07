@@ -5805,7 +5805,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.82, y: 1.8, z: 1.95}
+  m_Size: {x: 3.82, y: 1.8, z: 2.64}
   m_Center: {x: 0, y: 0.91, z: 0.7}
 --- !u!114 &63226825
 MonoBehaviour:
@@ -13466,12 +13466,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126147644}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 988.8, y: 64.49, z: -5.12}
-  m_LocalScale: {x: 0.386271, y: 1, z: 1}
+  m_LocalRotation: {x: -0.00000005760116, y: -0.7071068, z: 0.00000005760116, w: 0.7071068}
+  m_LocalPosition: {x: -0.0105, y: 0.0133, z: 0.1191}
+  m_LocalScale: {x: 0.0015255138, y: 0.01322615, z: 0.009999997}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 935485191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &133739963
 PrefabInstance:
@@ -75779,7 +75779,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8902536447320522018, guid: 475054c3ae438a14c87a575c9fa44ee7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 833018119}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8126737932816066456, guid: 475054c3ae438a14c87a575c9fa44ee7, type: 3}
       insertIndex: -1
@@ -155961,8 +155964,8 @@ Transform:
   m_GameObject: {fileID: 706992368}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -5.0242958e-15, w: 1}
-  m_LocalPosition: {x: 1009.7, y: 64.15, z: -4.840002}
-  m_LocalScale: {x: 1, y: 1, z: 4.8971996}
+  m_LocalPosition: {x: 1009.7, y: 64.43, z: -4.840002}
+  m_LocalScale: {x: 1.5745, y: 1.5745, z: 7.7106404}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -159379,7 +159382,7 @@ GameObject:
   - component: {fileID: 833018117}
   m_Layer: 0
   m_Name: RoadZone
-  m_TagString: Untagged
+  m_TagString: SwitchZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159463,12 +159466,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833018116}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 421.7, y: 71.7, z: -5.12}
-  m_LocalScale: {x: 0.52137667, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.08, y: 1.87, z: 8.54}
+  m_LocalScale: {x: 0.090305135, y: 2.618179, z: 0.69866544}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1862150958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &839670145
 PrefabInstance:
@@ -161284,6 +161287,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6928436485632942632, guid: 203730fc979bea343b0561f4f20f9672, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1581123262}
+    - targetCorrespondingSourceObject: {fileID: 6928436485632942632, guid: 203730fc979bea343b0561f4f20f9672, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 126147647}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -1693548379583986701, guid: 203730fc979bea343b0561f4f20f9672, type: 3}
       insertIndex: -1
@@ -161418,7 +161424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VehicleAutoMover
   destination: {fileID: 706992371}
   moveSpeed: 5
-  rotateTowardsDestination: 1
+  rotateTowardsDestination: 0
   rotateSpeed: 5
   stopDistance: 0.2
   onStartMoving:
@@ -161430,6 +161436,7 @@ MonoBehaviour:
   onArrived:
     m_PersistentCalls:
       m_Calls: []
+  centerOfMassOffset: {x: 0, y: -1, z: 0}
 --- !u!54 &935485196
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -161452,10 +161459,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 104
   m_CollisionDetection: 0
 --- !u!1001 &935502129
 PrefabInstance:
@@ -163232,7 +163239,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.82, y: 1.8, z: 1.95}
+  m_Size: {x: 4.35, y: 1.8, z: 2.63}
   m_Center: {x: 0, y: 0.91, z: 0.7}
 --- !u!114 &1072525980
 MonoBehaviour:
@@ -163288,6 +163295,10 @@ PrefabInstance:
     - target: {fileID: 8634637594312527959, guid: 83208228e90324a269a6120c1cadc77a, type: 3}
       propertyPath: m_Name
       value: OfficeWorker (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634637594312527959, guid: 83208228e90324a269a6120c1cadc77a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8634637594312527959, guid: 83208228e90324a269a6120c1cadc77a, type: 3}
       propertyPath: m_TagString
@@ -165125,7 +165136,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.82, y: 1.8, z: 1.95}
+  m_Size: {x: 3.82, y: 1.8, z: 3.83}
   m_Center: {x: 0, y: 0.91, z: 0.7}
 --- !u!114 &1139029549
 MonoBehaviour:
@@ -188153,7 +188164,7 @@ Transform:
   m_GameObject: {fileID: 1267104069}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 238.4, y: 78, z: -4.29}
+  m_LocalPosition: {x: 1030, y: 78, z: -4.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -194711,7 +194722,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.82, y: 1.8, z: 1.95}
+  m_Size: {x: 3.82, y: 1.8, z: 3.01}
   m_Center: {x: 0, y: 0.91, z: 0.7}
 --- !u!114 &1517560200
 MonoBehaviour:
@@ -194790,7 +194801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8172849020266659022, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.35
+      value: -6.09
       objectReference: {fileID: 0}
     - target: {fileID: 8172849020266659022, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -207064,7 +207075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VehicleAutoMover
   destination: {fileID: 1320003280}
   moveSpeed: 5
-  rotateTowardsDestination: 1
+  rotateTowardsDestination: 0
   rotateSpeed: 5
   stopDistance: 0.2
   onStartMoving:
@@ -207076,6 +207087,7 @@ MonoBehaviour:
   onArrived:
     m_PersistentCalls:
       m_Calls: []
+  centerOfMassOffset: {x: 0, y: -1, z: 0}
 --- !u!54 &1862150954
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -207098,10 +207110,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 104
   m_CollisionDetection: 0
 --- !u!64 &1862150955
 MeshCollider:
@@ -207125,6 +207137,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8963773523531282483, guid: fff13d40d70b4454292c98b987f14a57, type: 3}
+--- !u!4 &1862150958 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8902536447320522018, guid: 475054c3ae438a14c87a575c9fa44ee7, type: 3}
+  m_PrefabInstance: {fileID: 515982064}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1867343787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232828,7 +232845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3111129448783625016, guid: e66e47acabbcbae4693cd4edf04a45b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 3111129448783625016, guid: e66e47acabbcbae4693cd4edf04a45b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -306212,8 +306229,6 @@ SceneRoots:
   - {fileID: 935485185}
   - {fileID: 1267104072}
   - {fileID: 1337531726}
-  - {fileID: 833018119}
-  - {fileID: 126147647}
   - {fileID: 1320003280}
   - {fileID: 706992371}
   - {fileID: 918765973}

@@ -2922,16 +2922,16 @@ LineRenderer:
   m_MaskInteraction: 0
   m_Positions:
   - {x: 238.6685, y: 79.649, z: -6}
-  - {x: 238.6763, y: 79.58792, z: -5.947863}
-  - {x: 238.68411, y: 79.52685, z: -5.895726}
-  - {x: 238.6919, y: 79.46576, z: -5.8435893}
-  - {x: 238.6997, y: 79.40468, z: -5.791452}
-  - {x: 238.70749, y: 79.3436, z: -5.739315}
-  - {x: 238.71527, y: 79.28252, z: -5.6871777}
-  - {x: 238.72308, y: 79.221436, z: -5.635041}
-  - {x: 238.7309, y: 79.160355, z: -5.582904}
-  - {x: 238.73868, y: 79.09927, z: -5.5307674}
-  - {x: 238.74649, y: 79.03819, z: -5.47863}
+  - {x: 238.6763, y: 79.58792, z: -5.985}
+  - {x: 238.68411, y: 79.52685, z: -5.9700003}
+  - {x: 238.6919, y: 79.46576, z: -5.955}
+  - {x: 238.6997, y: 79.40468, z: -5.9400005}
+  - {x: 238.70749, y: 79.3436, z: -5.925}
+  - {x: 238.71527, y: 79.28252, z: -5.91}
+  - {x: 238.72308, y: 79.221436, z: -5.895}
+  - {x: 238.7309, y: 79.160355, z: -5.88}
+  - {x: 238.73868, y: 79.09927, z: -5.865}
+  - {x: 238.74649, y: 79.03819, z: -5.85}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -8147,8 +8147,8 @@ MonoBehaviour:
   OnRoadClear:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 599119012}
-        m_TargetAssemblyTypeName: VehicleAutoMover, Assembly-CSharp
+      - m_Target: {fileID: 599119017}
+        m_TargetAssemblyTypeName: VehicleAutoMover2, Assembly-CSharp
         m_MethodName: StartMoving
         m_Mode: 1
         m_Arguments:
@@ -8162,8 +8162,8 @@ MonoBehaviour:
   OnRoadBlocked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 599119012}
-        m_TargetAssemblyTypeName: VehicleAutoMover, Assembly-CSharp
+      - m_Target: {fileID: 599119017}
+        m_TargetAssemblyTypeName: VehicleAutoMover2, Assembly-CSharp
         m_MethodName: StopMoving
         m_Mode: 1
         m_Arguments:
@@ -8755,7 +8755,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!1 &141296350
 GameObject:
@@ -102076,7 +102076,7 @@ PrefabInstance:
       addedObject: {fileID: 599119013}
     - targetCorrespondingSourceObject: {fileID: 25949872634309429, guid: d77ab5d187ec5884ab8f49485abfbba1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 599119012}
+      addedObject: {fileID: 599119017}
   m_SourcePrefab: {fileID: 100100000, guid: d77ab5d187ec5884ab8f49485abfbba1, type: 3}
 --- !u!1 &599119007 stripped
 GameObject:
@@ -102088,32 +102088,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -180547617616349227, guid: d77ab5d187ec5884ab8f49485abfbba1, type: 3}
   m_PrefabInstance: {fileID: 599119006}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &599119012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599119007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99b1d976b024714b8faea3d64fe893e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VehicleAutoMover
-  destination: {fileID: 706992371}
-  moveSpeed: 5
-  rotateTowardsDestination: 1
-  rotateSpeed: 5
-  stopDistance: 0.2
-  onStartMoving:
-    m_PersistentCalls:
-      m_Calls: []
-  onStopped:
-    m_PersistentCalls:
-      m_Calls: []
-  onArrived:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!54 &599119013
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -102162,6 +102136,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 38.52431, y: 39.6, z: 223.80594}
   m_Center: {x: 0, y: 21.5, z: 0}
+--- !u!114 &599119017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599119007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 526418d7e5d250f4c9165a9eceb19ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleAutoMover2
+  destination: {fileID: 706992371}
+  moveSpeed: 5
+  rotateTowardsDestination: 1
+  rotateSpeed: 5
+  stopDistance: 0.2
+  onStartMoving:
+    m_PersistentCalls:
+      m_Calls: []
+  onStopped:
+    m_PersistentCalls:
+      m_Calls: []
+  onArrived:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &602560690
 GameObject:
   m_ObjectHideFlags: 0
@@ -170893,15 +170893,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1235996274}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.10455287
+      value: 0.10455288
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.09850587
+      value: 0.098505884
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalScale.z
@@ -170909,31 +170909,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 385.8
+      value: 238.74649
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -130.2
+      value: 79.03819
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -201.2
+      value: -5.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8754261
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.40821788
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.23456968
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.10938163
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -170961,7 +170961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9724701dfcdcb6b47a083a0e58a77885, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -172250,6 +172250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1193301078}
   - component: {fileID: 1193301077}
+  - component: {fileID: 1193301079}
   m_Layer: 0
   m_Name: truck
   m_TagString: Untagged
@@ -172271,7 +172272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VehicleAutoMover
   destination: {fileID: 25005375}
   moveSpeed: 5
-  rotateTowardsDestination: 1
+  rotateTowardsDestination: 0
   rotateSpeed: 5
   stopDistance: 0.2
   onStartMoving:
@@ -172283,6 +172284,7 @@ MonoBehaviour:
   onArrived:
     m_PersistentCalls:
       m_Calls: []
+  centerOfMassOffset: {x: 0, y: -1, z: 0}
 --- !u!4 &1193301078
 Transform:
   m_ObjectHideFlags: 0
@@ -172299,6 +172301,33 @@ Transform:
   - {fileID: 473148275}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!54 &1193301079
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193301076}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 104
+  m_CollisionDetection: 0
 --- !u!1001 &1193491254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173032,38 +173061,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1235996273
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1235996274}
-  m_Layer: 0
-  m_Name: Hook
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1235996274
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235996273}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -209.90002, y: 8.601, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 284526734}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237964672
 GameObject:
   m_ObjectHideFlags: 0
@@ -178295,7 +178292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaneSwitchZone
   currentPlane: {fileID: 356116646}
   nextPlane: {fileID: 1011684888}
-  hook: {fileID: 1235996273}
+  hook: {fileID: 284526733}
   cameraFollow: {fileID: 330585548}
   uiToHideOnSwitch:
   - {fileID: 719558389}
@@ -196083,7 +196080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VehicleAutoMover
   destination: {fileID: 1320003280}
   moveSpeed: 5
-  rotateTowardsDestination: 1
+  rotateTowardsDestination: 0
   rotateSpeed: 5
   stopDistance: 0.2
   onStartMoving:
@@ -196095,6 +196092,7 @@ MonoBehaviour:
   onArrived:
     m_PersistentCalls:
       m_Calls: []
+  centerOfMassOffset: {x: 0, y: -1, z: 0}
 --- !u!54 &1862150954
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -196120,7 +196118,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 104
   m_CollisionDetection: 0
 --- !u!64 &1862150955
 MeshCollider:
@@ -297795,7 +297793,7 @@ SceneRoots:
   - {fileID: 1908594389}
   - {fileID: 29280552}
   - {fileID: 95464674}
-  - {fileID: 1235996274}
+  - {fileID: 1150384696}
   - {fileID: 1504916129}
   - {fileID: 1183536239}
   - {fileID: 1760614946}
