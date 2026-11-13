@@ -5,6 +5,9 @@ public class MissionResultUI : MonoBehaviour
 {
     [SerializeField] private GameObject resultPanel;
 
+    [SerializeField] private GameObject winObject;
+    [SerializeField] private GameObject loseObject;
+
     [SerializeField] private GameObject fireCheckIcon;
     [SerializeField] private GameObject fireFailIcon;
 
@@ -43,6 +46,8 @@ public class MissionResultUI : MonoBehaviour
     {
         if (GameManager.Instance == null) return;
         resultPanel.SetActive(true);
+        winObject.SetActive(true);
+        loseObject.SetActive(false);
         CheckStatus();
         nextLevelButton.SetActive(true);
     }
@@ -51,6 +56,8 @@ public class MissionResultUI : MonoBehaviour
     {
         if (GameManager.Instance == null) return;
         resultPanel.SetActive(true);
+        winObject.SetActive(false);
+        loseObject.SetActive(true);
         CheckStatus();
         nextLevelButton.SetActive(false);
     }

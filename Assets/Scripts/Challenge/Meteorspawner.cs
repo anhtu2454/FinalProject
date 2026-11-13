@@ -11,7 +11,7 @@ public class MeteorSpawner : MonoBehaviour
 
     public float spawnHeight = 30f;
 
-    [Header("Thời gian giữa 2 thiên thạch (giây)")]
+    [Header("Thời gian giữa 2 thiên thạch")]
     public float minInterval = 2f;
     public float maxInterval = 4f;
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BreakableWall : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class BreakableWall : MonoBehaviour
     [Range(0f, 1f)] public float breakVolume = 1f;
     public float soundMinDistance = 20f;
     public float soundMaxDistance = 200f;
+
+    [Header("Events")]
+    public UnityEvent onBroken;
 
     private readonly List<Rigidbody> pieces = new List<Rigidbody>();
     private bool broken = false;
@@ -69,6 +73,7 @@ public class BreakableWall : MonoBehaviour
             rb.isKinematic = false;
             rb.AddExplosionForce(explosionForce, hitPoint, explosionRadius, 0f, ForceMode.Impulse);
         }
+        onBroken.Invoke();
     }
 
     //âm thanh

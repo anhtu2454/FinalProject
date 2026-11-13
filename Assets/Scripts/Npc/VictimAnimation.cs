@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class VictimAnimation : MonoBehaviour
 {
@@ -12,6 +12,9 @@ public class VictimAnimation : MonoBehaviour
     public void OnHooked()
     {
         animator.SetBool("IsHooked", true);
+
+        NPCRunner runner = GetComponent<NPCRunner>();
+        if (runner != null) runner.StopRunning();
     }
 
     public void OnReleased()

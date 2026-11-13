@@ -5,6 +5,7 @@ public class PlaneSwitchZone : MonoBehaviour
     [SerializeField] private GameObject currentPlane;
     [SerializeField] private GameObject nextPlane;
     [SerializeField] private GameObject hook;
+    [SerializeField] private GameObject [] risingGas;
     [SerializeField] private CameraFollow cameraFollow;
     [SerializeField] private GameObject[] uiToHideOnSwitch;
 
@@ -42,7 +43,16 @@ public class PlaneSwitchZone : MonoBehaviour
                 }
             }
         }
-
+        if (risingGas != null)
+        {
+            foreach (GameObject obj in risingGas)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                }
+            }
+        }
         Debug.Log("Đã chuyển sang điều khiển máy bay tiếp theo!");
     }
 }

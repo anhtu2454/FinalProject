@@ -23,6 +23,11 @@ public class HelicopterMovement : MonoBehaviour
     // biến lưu góc quay mặt hiện tại (0 độ hoặc 180 độ)
     private float currentFacingY = 0f;
 
+    [Header("--- Hiệu ứng ---")]
+    [SerializeField] private GameObject explosionEffect;
+
+    private bool isDead = false;
+
     private Rigidbody rb;
 
     void Awake()
@@ -103,5 +108,35 @@ public class HelicopterMovement : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(0, currentFacingY, targetTiltAngle);
 
         transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, tiltSpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isDead) return;
+
+        if (other.CompareTag("Victim"))
+        {
+            return;
+        }
+        if (other.CompareTag("SwitchZone"))
+        {
+            return;
+        }
+
+        Crash();
+    }
+
+    private void Crash()
+    {
+        isDead = true;
+
+        if (explosionEffect != null)
+        {
+            Instantiate(explosionEffect, transform.position, transform.rotation);
+        }
+
+        gameObject.SetActive(false);
+        GameManager.Instance.FailMission();
+        Debug.Log("Game Over!");
     }
 }
