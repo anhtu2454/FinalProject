@@ -34,14 +34,18 @@ public class CargoAttachable : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (currentCargo != null) return;
-        if (!(collision.gameObject.CompareTag(cargoTag) || collision.gameObject.CompareTag(victimTag) || collision.gameObject.CompareTag(brokenVehicleTag))) return;
+        if (!(collision.gameObject.CompareTag(cargoTag) || 
+            collision.gameObject.CompareTag(victimTag) || 
+            collision.gameObject.CompareTag(brokenVehicleTag))) return;
 
         nearbyCargo = collision.rigidbody != null ? collision.rigidbody : collision.gameObject.GetComponent<Rigidbody>();
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (!(collision.gameObject.CompareTag(cargoTag) || collision.gameObject.CompareTag(victimTag) || collision.gameObject.CompareTag(brokenVehicleTag))) return;
+        if (!(collision.gameObject.CompareTag(cargoTag) || 
+            collision.gameObject.CompareTag(victimTag) || 
+            collision.gameObject.CompareTag(brokenVehicleTag))) return;
 
         Rigidbody exitingRb = collision.rigidbody != null ? collision.rigidbody : collision.gameObject.GetComponent<Rigidbody>();
         if (exitingRb == nearbyCargo)

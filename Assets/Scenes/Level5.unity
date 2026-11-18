@@ -333044,7 +333044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakableWall
   breakerTag: Cargo
-  breakSpeed: 4
+  breakSpeed: 10
   explosionForce: 6
   explosionRadius: 5
   breakClip: {fileID: 8300000, guid: 882a53dc82d189f4a9380d8aa84d9f06, type: 3}

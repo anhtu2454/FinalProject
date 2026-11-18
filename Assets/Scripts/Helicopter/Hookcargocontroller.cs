@@ -29,7 +29,7 @@ public class HookCargoController : MonoBehaviour
             hookRigidbody = hookPoint.GetComponent<Rigidbody>();
             if (hookRigidbody == null)
             {
-                Debug.LogWarning("HookCargoController: hookPoint cần có Rigidbody để có vật lý quán tính.");
+                Debug.LogWarning("HookCargoController: hookPoint cần có Rigidbody");
             }
         }
     }
