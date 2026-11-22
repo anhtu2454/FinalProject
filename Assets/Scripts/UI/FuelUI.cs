@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class FuelUI : MonoBehaviour
 {
     [SerializeField] private PlaneMovement plane;
+    [SerializeField] private HelicopterMovement helicopter;
     [SerializeField] private Slider fuelSlider;
     [SerializeField] private Image fillImage;
 
@@ -14,10 +15,30 @@ public class FuelUI : MonoBehaviour
 
     private void Update()
     {
-        if (plane == null || fuelSlider == null) return;
-        if (plane.MaxFuel <= 0f) return;
+        if (fuelSlider == null) return;
 
-        float fuelPercent = plane.CurrentFuel / plane.MaxFuel;
+        // Xem đang lái máy bay hay trực thăng (cái nào đang bật thì lấy xăng của cái đó)
+        float currentFuel;
+        float maxFuel;
+
+        if (plane != null && plane.gameObject.activeInHierarchy)
+        {
+            currentFuel = plane.CurrentFuel;
+            maxFuel = plane.MaxFuel;
+        }
+        else if (helicopter != null && helicopter.gameObject.activeInHierarchy)
+        {
+            currentFuel = helicopter.CurrentFuel;
+            maxFuel = helicopter.MaxFuel;
+        }
+        else
+        {
+            return; // Không có cái nào đang bật
+        }
+
+        if (maxFuel <= 0f) return;
+
+        float fuelPercent = currentFuel / maxFuel;
         fuelSlider.value = fuelPercent;
 
         if (fillImage != null)

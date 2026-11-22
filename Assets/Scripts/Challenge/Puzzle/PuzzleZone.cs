@@ -14,12 +14,10 @@ public class PuzzleZone : MonoBehaviour
         puzzlePanel.SetActive(false);
     }
 
-    // trực thăng bay vào vùng này
     void OnTriggerEnter(Collider other)
     {
         if (isSolved || puzzlePanel.activeSelf) return;
 
-        // chỉ trực thăng mới mở được câu đố
         if (other.GetComponentInParent<HelicopterMovement>() == null) return;
 
         // xoay ngẫu nhiên 9 ô

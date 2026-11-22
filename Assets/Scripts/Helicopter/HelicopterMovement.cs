@@ -26,6 +26,15 @@ public class HelicopterMovement : MonoBehaviour
     [Header("--- Hiệu ứng ---")]
     [SerializeField] private GameObject explosionEffect;
 
+    [Header("--- Nhiên liệu ---")]
+    [SerializeField] private float maxFuel = 240f; // Tổng số giây bay được
+    private float currentFuel;                     // Nhiên liệu còn lại
+    private bool outOfFuel = false;                // true = đã hết xăng
+
+    // Dữ liệu UI đọc
+    public float CurrentFuel => currentFuel;
+    public float MaxFuel => maxFuel;
+
     private bool isDead = false;
 
     private Rigidbody rb;
@@ -33,13 +42,36 @@ public class HelicopterMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        currentFuel = maxFuel;
     }
 
     void Update()
     {
+        if (isDead) return;
+
+        HandleFuel();
+
+        // Hết xăng thì mất điều khiển: bỏ qua các hàm bay bên dưới
+        if (outOfFuel) return;
+
         HandleLift();
         HandleMovement();
         HandleTiltAndFlip();
+    }
+
+    // Mỗi giây trừ 1 đơn vị nhiên liệu
+    void HandleFuel()
+    {
+        if (outOfFuel) return;
+
+        currentFuel -= Time.deltaTime;
+
+        if (currentFuel <= 0f)
+        {
+            currentFuel = 0f;
+            outOfFuel = true;
+            rb.useGravity = true;
+        }
     }
 
 
@@ -125,6 +157,17 @@ public class HelicopterMovement : MonoBehaviour
 
         Crash();
     }
+
+    // Hết xăng và rơi trúng vật gì đó thì nổ
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (isDead) return;
+
+    //    if (outOfFuel)
+    //    {
+    //        Crash();
+    //    }
+    //}
 
     private void Crash()
     {

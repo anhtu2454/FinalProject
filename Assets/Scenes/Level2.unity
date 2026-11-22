@@ -3101,15 +3101,15 @@ LineRenderer:
   m_MaskInteraction: 0
   m_Positions:
   - {x: -57.131493, y: 78.1, z: -6}
-  - {x: -57.103203, y: 78.097244, z: -5.9930773}
-  - {x: -57.081787, y: 78.09455, z: -5.986154}
-  - {x: -57.067226, y: 78.09192, z: -5.9792314}
-  - {x: -57.059536, y: 78.089355, z: -5.9723086}
-  - {x: -57.0587, y: 78.08684, z: -5.9653854}
-  - {x: -57.064743, y: 78.08439, z: -5.9584627}
-  - {x: -57.07764, y: 78.082, z: -5.9515395}
-  - {x: -57.097412, y: 78.07968, z: -5.944617}
-  - {x: -57.12404, y: 78.077415, z: -5.9376936}
+  - {x: -57.134094, y: 78.09753, z: -5.9930773}
+  - {x: -57.136703, y: 78.09505, z: -5.986154}
+  - {x: -57.139305, y: 78.09257, z: -5.9792314}
+  - {x: -57.14192, y: 78.09009, z: -5.9723086}
+  - {x: -57.144516, y: 78.08761, z: -5.9653854}
+  - {x: -57.147118, y: 78.08513, z: -5.9584627}
+  - {x: -57.149727, y: 78.08265, z: -5.9515395}
+  - {x: -57.152336, y: 78.08018, z: -5.944617}
+  - {x: -57.154934, y: 78.07769, z: -5.9376936}
   - {x: -57.15754, y: 78.07522, z: -5.930771}
   m_Parameters:
     serializedVersion: 3
@@ -60513,6 +60513,7 @@ MonoBehaviour:
   maxTiltAngle: 10
   tiltSpeed: 5
   explosionEffect: {fileID: 0}
+  maxFuel: 240
 --- !u!4 &389631733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d840c85e536f154889ac989ae72eb67, type: 3}
@@ -68658,6 +68659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FuelUI
   plane: {fileID: 356116647}
+  helicopter: {fileID: 1011684891}
   fuelSlider: {fileID: 655441970}
   fillImage: {fileID: 1959323587}
   lowFuelThreshold: 0.25
@@ -114792,6 +114794,7 @@ MonoBehaviour:
   maxTiltAngle: 10
   tiltSpeed: 5
   explosionEffect: {fileID: 0}
+  maxFuel: 240
 --- !u!4 &1011684894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d840c85e536f154889ac989ae72eb67, type: 3}

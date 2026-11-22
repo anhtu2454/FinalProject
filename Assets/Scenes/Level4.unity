@@ -74848,6 +74848,7 @@ MonoBehaviour:
   maxTiltAngle: 10
   tiltSpeed: 5
   explosionEffect: {fileID: 0}
+  maxFuel: 240
 --- !u!4 &389631733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d840c85e536f154889ac989ae72eb67, type: 3}
@@ -145894,6 +145895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FuelUI
   plane: {fileID: 356116647}
+  helicopter: {fileID: 1011684891}
   fuelSlider: {fileID: 655441970}
   fillImage: {fileID: 1959323587}
   lowFuelThreshold: 0.25
@@ -165232,6 +165234,7 @@ MonoBehaviour:
   maxTiltAngle: 10
   tiltSpeed: 5
   explosionEffect: {fileID: 0}
+  maxFuel: 240
 --- !u!4 &1011684894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d840c85e536f154889ac989ae72eb67, type: 3}
