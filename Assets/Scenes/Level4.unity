@@ -165234,7 +165234,7 @@ MonoBehaviour:
   maxTiltAngle: 10
   tiltSpeed: 5
   explosionEffect: {fileID: 0}
-  maxFuel: 240
+  maxFuel: 420
 --- !u!4 &1011684894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d840c85e536f154889ac989ae72eb67, type: 3}

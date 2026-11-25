@@ -63,7 +63,7 @@ public class CargoAttachable : MonoBehaviour
 
         currentJoint = gameObject.AddComponent<FixedJoint>();
         currentJoint.connectedBody = cargoRb;
-        currentJoint.breakForce = Mathf.Infinity;
+        currentJoint.breakForce = 500f;
         currentJoint.breakTorque = Mathf.Infinity;
 
         VictimAnimation victim = cargoRb.GetComponent<VictimAnimation>();
